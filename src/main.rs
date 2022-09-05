@@ -22,7 +22,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         let (mut socket, _) = listener.accept().await?;
 
         tokio::spawn(async move {
-            let mut buf = [0; 1024];
+            let mut buf = [0; 8192];
 
             // In a loop, read data from the socket and write the data back.
             loop {
